@@ -7,7 +7,7 @@
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/slobodan-dusanic/vscode-nuget-switcher"
+    "url": "https://github.com/Slobo989/vscode-nuget-switcher"
   },
   "engines": {
     "vscode": "^1.85.0"
