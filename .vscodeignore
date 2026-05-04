@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+src/**
+scripts/**
+node_modules/**
+.gitignore
+tsconfig.json
+eslint.config.mjs
+**/*.map
+**/*.ts
+out/assetsParser.js
+out/csprojParser.js
+out/projectDiscovery.js
+out/switcher.js
+out/types.js

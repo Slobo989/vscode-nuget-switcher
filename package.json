@@ -1,0 +1,95 @@
+{
+  "name": "vscode-nuget-switcher",
+  "displayName": "NuGet Reference Switcher",
+  "description": "Switch between NuGet PackageReferences and ProjectReferences in .NET projects",
+  "version": "0.1.0",
+  "publisher": "slobodan-dusanic",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slobodan-dusanic/vscode-nuget-switcher"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.csproj"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nugetSwitcher.switchToProjects",
+        "title": "NuGet Switcher: Switch to Project References"
+      },
+      {
+        "command": "nugetSwitcher.switchToPackages",
+        "title": "NuGet Switcher: Switch to Package References"
+      },
+      {
+        "command": "nugetSwitcher.showStatus",
+        "title": "NuGet Switcher: Show Switch Status"
+      }
+    ],
+    "configuration": {
+      "title": "NuGet Reference Switcher",
+      "properties": {
+        "nugetSwitcher.additionalSearchPaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional directories to search for .csproj files outside the workspace.",
+          "markdownDescription": "Additional directories to search for `.csproj` files (for projects **outside** the workspace).\n\nExample: `C:/repos/my-shared-libs`",
+          "scope": "window"
+        },
+        "nugetSwitcher.autoRestore": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically run dotnet restore after switching references.",
+          "markdownDescription": "Automatically run `dotnet restore` after switching references.",
+          "scope": "window"
+        },
+        "nugetSwitcher.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/node_modules/**",
+            "**/bin/**",
+            "**/obj/**"
+          ],
+          "description": "Glob patterns for directories to exclude from .csproj discovery.",
+          "markdownDescription": "Glob patterns for directories to **exclude** from `.csproj` discovery.",
+          "scope": "window"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "sharp": "^0.34.5",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.7.2",
+    "glob": "^10.3.10"
+  }
+}

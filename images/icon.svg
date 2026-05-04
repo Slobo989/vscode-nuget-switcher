@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- NuGet Box (Bottom Half) -->
+  <path d="M20 50V75L50 90L80 75V50" stroke="#004880" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M50 65V90" stroke="#004880" stroke-width="6" stroke-linejoin="round"/>
+  
+  <!-- Project File Icon -->
+  <rect x="35" y="10" width="30" height="40" rx="2" stroke="#007ACC" stroke-width="6"/>
+  <path d="M45 20H55M45 30H55" stroke="#007ACC" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Vertical Switch Arrows -->
+  <path d="M85 20V40M85 40L90 35M85 40L80 35" stroke="#007ACC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 40V20M15 20L10 25M15 20L20 25" stroke="#007ACC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
